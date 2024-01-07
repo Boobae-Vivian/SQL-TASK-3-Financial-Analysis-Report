@@ -116,6 +116,10 @@ The output of this query will provide a list of employees with their names, phon
 
 ![](Task5c.png)
 
+### 4. Identify and display the top 5 and bottom 5 customers with the highest and lowest yearly increments, including cities, phones, and emails.
+
+To
+
 
 
 
