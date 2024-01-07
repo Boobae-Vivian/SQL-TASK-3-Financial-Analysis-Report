@@ -49,6 +49,38 @@ Effectively showcasing these skills and concepts will play a pivotal role in imp
 
 ### 1. Display names, cities, education, and designations of the top 7 customers with the highest salaries?
 
+To extract and display information about the top 7 customers with the highest salaries, we utilize SQL with the SELECT function, INNER JOIN function, ORDER BY clause, and the LIMIT function. The syntax for this operation is as follows:
+
+```sql
+SELECT Name, Cities, Education, Designation, Salaries FROM Employee
+INNER JOIN Department ON Employee.DepID = Department.DepID
+INNER JOIN Salary ON Employee.EmpID = Salary.EmpID
+ORDER BY Salaries DESC
+LIMIT 7;
+```
+
+Breaking down the syntax:
+- SELECT Name, Cities, Education, Designation, Salaries: Specifies the columns to be retrieved from the combined datasets.
+- FROM Employee: Indicates the primary dataset to retrieve information from.
+- INNER JOIN Department ON Employee.DepID = Department.DepID: Joins the Employee and Department datasets based on the common Department ID.
+- INNER JOIN Salary ON Employee.EmpID = Salary.EmpID: Further joins the Salary dataset based on the common Employee ID.
+- ORDER BY Salaries DESC: Orders the result set in descending order based on the Salaries column.
+- LIMIT 7: Restricts the output to the top 7 records.
+  
+In this syntax, the Employee dataset contains information about names and cities, while the Department dataset provides details about education and designation. The Salary dataset contributes information about salaries. The use of INNER JOINs links these datasets based on common identifiers. The result of this query reveals Sarah, located in Pune, with a B.Tech education and ML Engineering designation, as the highest salary earner, with a total salary of 99,46,188.
+
+![](Task5a.png)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
