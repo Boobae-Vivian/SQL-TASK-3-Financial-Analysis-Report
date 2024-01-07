@@ -71,6 +71,39 @@ In this syntax, the Employee dataset contains information about names and cities
 
 ![](Task5a.png)
 
+###  2. Calculate and display the count of salaries by city:
+
+To determine and exhibit the count of salaries by city, the SQL query employs the SELECT function, COUNT aggregation, INNER JOIN function, and GROUP BY clause. The syntax is outlined as follows:
+
+```sql
+SELECT City, ROUND(COUNT(Salaries), 2) AS `Count_of_Salaries`
+FROM Employee INNER JOIN Salary ON Employee.EmpID = Salary.EmpID
+GROUP BY City;
+```
+
+Breaking down the syntax:
+- SELECT City, ROUND(COUNT(Salaries), 2) AS Count_of_Salaries:
+  - Selects the City column and calculates the count of salaries for each city using the COUNT aggregation.
+  - The ROUND function is applied to ensure precision up to two decimal places.
+  - The result is labeled as Count_of_Salaries for clarity in the output.
+- FROM Employee INNER JOIN Salary ON Employee.EmpID = Salary.EmpID:
+  - Specifies that the data is retrieved from the Employee and Salary datasets.
+  - The INNER JOIN connects these datasets based on the common Employee ID.
+- GROUP BY City:
+   - Groups the result set by the City column, allowing for the aggregation function to be applied on a per-city basis.
+
+In the context of the data, the result will showcase each city along with the corresponding count of salaries. Notably, Mumbai is identified as the city with the highest count of salaries, specifically 44. The GROUP BY clause ensures that the count is calculated for each unique city, providing a comprehensive view of salary distribution across different locations.
+
+![](Task5b.png)
+
+
+
+
+
+
+
+
+
 
 
 
