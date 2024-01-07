@@ -96,6 +96,28 @@ In the context of the data, the result will showcase each city along with the co
 
 ![](Task5b.png)
 
+### 3. Rank the employee's salaries, displaying the bottom 10 salary earners:
+
+To generate a ranking of employee salaries and display the bottom 10 earners, the SQL query utilizes the SELECT function, ROW_NUMBER function, the AS (aliasing feature), and INNER JOIN function. The syntax is provided below:
+
+```sql
+SELECT Name, Phone, Email, Salaries, ROW_NUMBER() OVER (ORDER BY Salaries ASC) AS `Rank_Number`
+FROM Employee INNER JOIN Salary ON Employee.EmpID = Salary.EmpID;
+```
+Breaking down the syntax:
+- SELECT Name, Phone, Email, Salaries, ROW_NUMBER() OVER (ORDER BY Salaries ASC) AS Rank_Number:
+  - Specifies the columns to be retrieved from the combined Employee and Salary datasets.
+  - Employs the ROW_NUMBER() function to assign a rank to each record based on the ascending order of salaries.
+  - The AS keyword aliases the result as Rank_Number for clearer identification in the output.
+- FROM Employee INNER JOIN Salary ON Employee.EmpID = Salary.EmpID:
+  - Indicates that the data is retrieved by joining the Employee and Salary datasets based on the common Employee ID.
+
+The output of this query will provide a list of employees with their names, phone numbers, emails, salaries, and a corresponding rank number based on ascending salary order. The lower the rank number, the lower the salary, allowing for easy identification of the bottom 10 earners. This approach aids in analyzing and understanding the distribution of salaries within the organization.
+
+![](Task5c.png)
+
+
+
 
 
 
