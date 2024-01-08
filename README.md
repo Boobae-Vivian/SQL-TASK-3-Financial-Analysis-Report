@@ -118,7 +118,25 @@ The output of this query will provide a list of employees with their names, phon
 
 ### 4. Identify and display the top 5 and bottom 5 customers with the highest and lowest yearly increments, including cities, phones, and emails.
 
-To
+To identify and showcase both the top 5 and bottom 5 customers with the highest and lowest yearly increments, along with their respective cities, phones, and emails, SQL queries utilizing the SELECT function, INNER JOIN function, ORDER BY clause, and the LIMIT function are employed. The syntax is presented as follows:
+
+```sql
+TOP 5
+SELECT Name, City, Phones, Emails, `Yearly Increment` FROM Employee
+INNER JOIN Salary ON Employee.EmpID = Salary.EmpID
+ORDER BY `Yeaarly Increment` DESC
+LIMIT 5;
+
+BOTTOM 5
+SELECT Name, City, Phones, Emails, `Yearly Increment` FROM Employee
+INNER JOIN Salary ON Employee.EmpID = Salary.EmpID
+ORDER BY `Yeaarly Increment` ASC
+LIMIT 5;
+```
+
+|TOP 5 CUSTOMERS | BOTTOM 5 CUSTOMERS|
+:---------------:|:----------------:|
+![](Task5d.png)  |   ![](Task5d1.png)
 
 
 
